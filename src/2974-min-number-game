@@ -1,0 +1,15 @@
+function numberGame(nums: number[]): number[] {
+ nums.sort((a, b) => a - b);
+ const arr: number[] = [];
+ while (nums.length > 1) {
+    playRound(nums, arr);
+ }
+ return arr;
+};
+
+function playRound(nums: number[], arr: number[]) {
+    const lowestNum = nums.shift();
+    const nextlowestNum = nums.shift();
+    arr.push(nextlowestNum!);
+    arr.push(lowestNum!);
+}
